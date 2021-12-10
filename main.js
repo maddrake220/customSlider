@@ -9,11 +9,12 @@ window.onload = () => {
   slider.appendChild(node);
   slider.insertBefore(node2, slideLis[0]);
   const liWidth = slideLis[0].clientWidth;
-  const sliderWidth = liWidth * 5;
+  const newslideLis = slider.querySelectorAll("li");
+  const sliderWidth = liWidth * newslideLis.length;
   slider.style.width = sliderWidth + "px";
   let focus = 1;
   let moveDist = -liWidth;
-  slider.style.transform = `translateX(${moveDist})`;
+  slider.style.transform = `translateX(${moveDist}px)`;
   moveButton.addEventListener("click", (value) => {
     value.preventDefault();
 
