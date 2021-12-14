@@ -59,7 +59,17 @@ const customSlider = (target, option) => {
       item.classList.add("slider_item");
     });
 
-    let duration = option.speed;
+    // 옵션 예외처리와 셋팅
+    const OPTION = ((option) => {
+      const OPTION = { ...option };
+      if (OPTION.speed <= 0) {
+        throw new Error("option.speed: Need to set over 0");
+      } else {
+        return Object.freeze(OPTION);
+      }
+    })(option);
+
+    let duration = OPTION.speed;
     const node = slideLis[0].cloneNode(true);
     const node2 = slideLis[slideLis.length - 1].cloneNode(true);
     slider.appendChild(node);
