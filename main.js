@@ -25,6 +25,7 @@ const customSlider = (target, option) => {
   /* READY DOM */
   function innerName(target, option) {
     const slider = document.querySelector(target);
+    slider.classList.add("slider");
     // add parent div kindWrap
     const parent = slider.parentNode;
     const kindWrap = document.createElement("div");
@@ -53,14 +54,18 @@ const customSlider = (target, option) => {
     next.href = "";
     moveButton.appendChild(next);
 
-    const slideLis = slider.querySelectorAll("li");
+    const slideLis = slider.querySelectorAll(`${target} > *`);
+    slideLis.forEach((item) => {
+      item.classList.add("slider_item");
+    });
+
     let duration = option.speed;
     const node = slideLis[0].cloneNode(true);
     const node2 = slideLis[slideLis.length - 1].cloneNode(true);
     slider.appendChild(node);
     slider.insertBefore(node2, slideLis[0]);
     const liWidth = slideLis[0].clientWidth;
-    const newslideLis = slider.querySelectorAll("li");
+    const newslideLis = slider.querySelectorAll(`${target} > *`);
     const sliderWidth = liWidth * newslideLis.length;
     slider.style.width = sliderWidth + "px";
     let focus = 1;

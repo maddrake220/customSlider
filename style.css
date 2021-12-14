@@ -16,10 +16,10 @@ li {
 }
 .kind_wrap > .kind_slider .slider {
 }
-.kind_wrap > .kind_slider .slider > li {
+.kind_wrap > .kind_slider .slider > .slider_item {
   float: left;
 }
-.kind_wrap > .kind_slider .slider > li img {
+.kind_wrap > .kind_slider .slider > .slider_item img {
   vertical-align: top;
 }
 .kind_wrap .arrow > a.prev {
