@@ -20,10 +20,12 @@ kindWrap.appendChild(moveButton);
 const prev = document.createElement("a");
 prev.classList.add("prev");
 prev.innerText = "이전";
+prev.href = "";
 moveButton.appendChild(prev);
 const next = document.createElement("a");
 next.classList.add("next");
 next.innerText = "다음";
+next.href = "";
 moveButton.appendChild(next);
 
 const slideLis = slider.querySelectorAll("li");
